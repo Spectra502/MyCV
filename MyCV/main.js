@@ -37,7 +37,7 @@ scene.add(torus);
 //Light
 
 const pointLigth = new THREE.PointLight(0xffffff);
-pointLigth.position.set(0,0,12);
+pointLigth.position.set(5,5,5);
 
 //Ambient light
 const ambientLigth = new THREE.AmbientLight(0xffffff);
@@ -66,6 +66,9 @@ function addStar() {
 }
 
 Array(200).fill().forEach(addStar);
+
+const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+scene.background = spaceTexture;
 
 function animate() {
   requestAnimationFrame(animate)
